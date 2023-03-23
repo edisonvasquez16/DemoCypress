@@ -24,11 +24,11 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import SiigoLoginPage from "../ui/SiigoLoginPage"
+
 Cypress.Commands.add('loginSiigoPage', (username, password) => {
-    cy.get("input[name*='UserName']")
-        .type(username)
-    cy.get("input[name*='txtPassword']")
-        .type(password)
-    cy.get("input[type='submit']")
-        .click()
+    SiigoLoginPage
+    .enterUserValue(username)
+    .enterPasswordValue(password)
+    .clickOnLoginButton()
 })

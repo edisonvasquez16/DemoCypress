@@ -1,10 +1,12 @@
+import CalculatorPage from "../ui/CalculatorPage"
+
 class SeeThatValue {
 
-    static equals(value) {
-        cy.get('.DisplayText', {timeout:10000})
-            .invoke('val')
-            .should('contain', value)
+    equals(value) {
+        CalculatorPage.elements.result()
+         .invoke('val')
+         .should('contain', value)            
     }
 }
 
-export default SeeThatValue
+module.exports = new SeeThatValue()

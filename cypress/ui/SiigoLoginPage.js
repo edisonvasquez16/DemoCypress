@@ -1,9 +1,5 @@
 class SignInPage {
 
-    static instance() {
-        return new SignInPage()
-    }
-
     visit() {
         cy.visit('https://qastaging.siigo.com/');
         return this
@@ -13,24 +9,30 @@ class SignInPage {
         cy.contains('Inicio de sesion en Siigo')
     }
 
+    elements = {
+        username: () => cy.get("input[name*='UserName']"),
+        password: () => cy.get("input[name*='txtPassword']"),
+        loginButton: () => cy.get("input[type='submit']")
+    }
+
     enterUserValue(user) {
-        cy.get("input[name*='UserName']")
+        this.elements.username()
             .type(user)
         return this
     }
 
     enterPasswordValue(password) {
-        cy.get("input[name*='txtPassword']")
+        this.elements.password()
             .type(password)
         return this
     }
 
     clickOnLoginButton() {
-        cy.get("input[type='submit']")
+        this.elements.loginButton()
             .click()
         return this
     }
 
 }
 
-export default SignInPage
+module.exports = new SignInPage()

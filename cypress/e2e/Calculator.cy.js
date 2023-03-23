@@ -5,7 +5,6 @@ describe('SIIGO CALCULATOR TEST', function () {
 
     beforeEach('Calculator can be open', function () {
         CalculatorPage
-            .instance()
             .visit()
             .validatePage()
         cy.fixture('addExample')
@@ -17,8 +16,11 @@ describe('SIIGO CALCULATOR TEST', function () {
     describe('Test of calculator operations', function () {
 
         it('User can execute add operation', function () {
+            cy.intercept('POST', '/Calculator/Add', {
+                fixture: 'addCalculate.json'
+            }).as('modify-add-calculate')
+
             CalculatorPage
-                .instance()
                 .selectNumber(this.numbers.number1)
                 .selectAddOption()
                 .selectNumber(this.numbers.number2)
@@ -30,7 +32,6 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         it('User can execute substract operation', function () {
             CalculatorPage
-                .instance()
                 .selectNumber('900')
                 .selectSubstractOption()
                 .selectNumber('400')
@@ -42,7 +43,6 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         it('User can execute multiply operation', function () {
             CalculatorPage
-                .instance()
                 .selectNumber('45')
                 .selectMultiplyAddOption()
                 .selectNumber('4')
@@ -54,7 +54,6 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         it('User can execute division operation', function () {
             CalculatorPage
-                .instance()
                 .selectNumber('80')
                 .selectDivOption()
                 .selectNumber('2')
@@ -66,7 +65,6 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         it.skip('User can execute multiples operations', function () {
             CalculatorPage
-                .instance()
                 .selectNumber('150')
                 .selectAddOption()
                 .selectNumber('260')
@@ -93,12 +91,12 @@ describe('SIIGO CALCULATOR TEST', function () {
         it('User can execute multiples operations with array', function () {
             values.forEach(function callback(value, index) {
                 CalculatorPage
-                    .instance()
                     .selectNumber(value)
                     .selectCalculateOptionFor(index)
             })
-            SeeThatValue
-                .equals(50)
+            CalculatorPage
+                .getResultValue()
+                .should('contains', 50)
         })
     })
 

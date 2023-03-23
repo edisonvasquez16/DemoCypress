@@ -28,7 +28,7 @@ describe('Loging in Siigo cloud page', () => {
   
 })
 
-describe.skip('Loging with intercepted 1', () => {
+describe('Loging with intercepted 1', () => {
 
   beforeEach('LoginPage can be open', () => {
     cy.intercept('GET', '/user-settings/Menu/api/v1/menu/loadsettings', {
@@ -49,7 +49,7 @@ describe.skip('Loging with intercepted 1', () => {
 
 })
 
-describe.skip('Loging with intercepted 2', () => {
+describe('Loging with intercepted 2', () => {
 
   const loadsettings = {
     "companyKey":"SIIGOAUTOMATIONQAMODIFY 2",

@@ -1,9 +1,5 @@
 class CalculatorPage {
 
-    static instance() {
-        return new CalculatorPage()
-    }
-
     visit() {
         cy.visit('http://localhost/');
         return this
@@ -18,50 +14,66 @@ class CalculatorPage {
         cy.location('pathname').should('eq', '/')
     }
 
+
+    elements = {
+        //number: () => cy.get("button:contains('${number}')"),
+        addOption: () => cy.get('#add'),
+        substractOption: () => cy.get("button[name='minus']"),
+        multiplyOption: () => cy.xpath("//button[@class='Button Multiply']"),
+        divOption: () => cy.xpath("//button[contains(text(),'/')]"),
+        calcOption: () => cy.get("button[name='equal']"),
+        result: () => cy.get('.DisplayText', { timeout: 10000 })
+    }
+
     selectNumber(value) {
-        for (var i = 0; i < value.length; i++) 
+        for (var i = 0; i < value.length; i++)
             cy.xpath("//button[contains(text(),'" + value.charAt(i) + "')]")
                 .click()
         return this
     }
 
     selectAddOption() {
-        cy.get('#add')
+        this.elements.addOption()
             .click()
         return this
     }
 
     selectSubstractOption() {
-        cy.get("button[name='minus']")
+        this.elements.substractOption()
             .click()
         return this
     }
 
     selectMultiplyAddOption() {
-        cy.xpath("//button[@class='Button Multiply']")
+        this.elements.multiplyOption()
             .click()
         return this
     }
 
     selectDivOption() {
-        cy.xpath("//button[contains(text(),'/')]")
+        this.elements.divOption()
             .click()
         return this
     }
 
     selectCalculateOption() {
-        cy.get("button[name='equal']")
+        this.elements.calcOption()
             .click()
         return this
     }
 
     selectCalculateOptionFor(index) {
         if (!(index % 2) && index > 1)
-            cy.get("button[name='equal']")
+            this.elements.calcOption()
                 .click()
         return this
     }
 
+    getResultValue() {
+        return this.elements.result()
+            .invoke('val')
+    }
+
 }
 
-export default CalculatorPage
+module.exports = new CalculatorPage();
