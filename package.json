@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "@cypress/mocha-teamcity-reporter": "^1.0.0",
+    "@cypress/xpath": "^2.0.3",
+    "cypress": "^12.8.1",
+    "cypress-grep": "^2.5.3",
+    "cypress-mochawesome-reporter": "^2.4.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0"
+  },
+  "dependencies": {
+    "cypress-xpath": "^2.0.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "cypress/globals": true
+    },
+    "plugins": [
+      "cypress"
+    ]
+  },
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open",
+    "cypress:runCalculatorTest" : "cypress run --spec cypress/e2e/Calculator.cy.js",
+    "cypress:runChrome": "cypress run --browser chrome --spec cypress/e2e/*.cy.js",
+    "cypress:runFirefox": "cypress run --browser firefox --spec cypress/e2e/*.cy.js"
+  }
+}
