@@ -7,9 +7,8 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: Up calculator front
+      - name: Up calculator application
         run: docker run --name front -p 80:80 -d mvelasquez10/calculator:latest 
-      - name: Up calculator back
         run: docker run --name back -p 5000:80 -d mvelasquez10/calculator-api:latest 
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,3 +23,5 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Shutdown calculator application
+        run: docker stop front back
