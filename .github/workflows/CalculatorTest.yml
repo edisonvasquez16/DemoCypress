@@ -8,7 +8,7 @@ jobs:
       packages: write
     steps:
       - name: Up docker
-        run: docker-compose up -d
+        run: docker-compose.yml up -d
       - name: Checkout
         uses: actions/checkout@v3
       - name: Cypress run
