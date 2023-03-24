@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Logint Test Cypress
 on: [push]
 jobs:
   cypress-run:
@@ -13,9 +13,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: npm run cypress:runChrome
+          start: cypress run --browser chrome --spec cypress/e2e/Login.cy.js --record --key 2212b33c-7e37-4280-9026-45a088734829
           record: true
-          parallel: true # Runs test in parallel using settings above
+          parallel: true 
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
