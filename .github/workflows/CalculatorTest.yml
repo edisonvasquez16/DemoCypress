@@ -3,12 +3,14 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      packages: write
     steps:
+      - name: Up docker
+        run: docker-compose up -d
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Up calculator
-        with: 
-          start: docker-compose up -d 
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
