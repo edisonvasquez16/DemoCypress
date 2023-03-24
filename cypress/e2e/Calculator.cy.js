@@ -1,4 +1,4 @@
-import SeeThatValue from '../questions/SeeThatvalue'
+import SeeThatValue from '../questions/SeeThatValue'
 import CalculatorPage from '../ui/CalculatorPage'
 
 describe('SIIGO CALCULATOR TEST', function () {
