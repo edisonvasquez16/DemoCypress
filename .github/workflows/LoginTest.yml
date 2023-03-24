@@ -3,28 +3,11 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    container: 
-      image: cypress/browsers:node18.12.0-chrome107
-      options: --user 1001 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Persist Next.js build cache
-        uses: actions/cache@v2
-        with:
-          path: ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('yarn.lock') }}-
-
-      - name: Install and cache Cypress and npm dependencies, and build frontend server
-        uses: cypress-io/github-action@v2
-        with:
-          runTests: false
-          build: yarn build
-
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           start: npm run cypress:runLoginTest
           wait-on: 'http://localhost:3000'
@@ -34,10 +17,3 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      - name: Save built frontend server
-        uses: actions/upload-artifact@v2
-        with:
-          name: frontend-server
-          path: .next
-          if-no-files-found: error
