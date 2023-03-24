@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Reclaim cache directory
-        run: sudo chmod -R 777 /
+        run: chmod -R 777 /
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
