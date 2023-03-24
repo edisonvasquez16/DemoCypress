@@ -17,7 +17,7 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         it('User can execute add operation', function () {
             cy.intercept('POST', '/Calculator/Add', {
-                fixture: 'addCalculate.json'
+                fixture: 'addCalculateResponse.json'
             }).as('modify-add-calculate')
 
             CalculatorPage
@@ -27,40 +27,40 @@ describe('SIIGO CALCULATOR TEST', function () {
                 .selectCalculateOption()
 
             SeeThatValue
-                .equals(32)
+                .equals(70)
         })
 
         it('User can execute substract operation', function () {
             CalculatorPage
-                .selectNumber('900')
+            .selectNumber(this.numbers.number1)
                 .selectSubstractOption()
-                .selectNumber('400')
+                .selectNumber(this.numbers.number2)
                 .selectCalculateOption()
 
             SeeThatValue
-                .equals(500)
+                .equals(30)
         })
 
         it('User can execute multiply operation', function () {
             CalculatorPage
-                .selectNumber('45')
+            .selectNumber(this.numbers.number1)
                 .selectMultiplyAddOption()
-                .selectNumber('4')
+                .selectNumber(this.numbers.number2)
                 .selectCalculateOption()
 
             SeeThatValue
-                .equals(180)
+                .equals(1000)
         })
 
         it('User can execute division operation', function () {
             CalculatorPage
-                .selectNumber('80')
+            .selectNumber(this.numbers.number1)
                 .selectDivOption()
-                .selectNumber('2')
+                .selectNumber(this.numbers.number2)
                 .selectCalculateOption()
 
             SeeThatValue
-                .equals(40)
+                .equals(2.5)
         })
 
         it.skip('User can execute multiples operations', function () {
