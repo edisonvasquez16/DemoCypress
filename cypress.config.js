@@ -10,9 +10,9 @@ module.exports = defineConfig({
     html: true,
     json: true,
     quiet: true,
+    video: false,
   },
   chromeWebSecurity: false,
-  video: true,
   e2e: {
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on)
