@@ -91,6 +91,14 @@ describe('SIIGO CALCULATOR REST', function() {
             })
         })
 
+        it('Get history RestCalculator ', function() {
+            cy.request('GET', api.concat(EndPoints.paths.getHistory))
+            .then((response) => {
+                expect(response.status).to.equal(200)
+                expect(response.body.history).to.contain(1000)
+            })
+        })
+
         it('Put max history RestCalculator ', function() {
             cy.request({
                 method: 'PUT',

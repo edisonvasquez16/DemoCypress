@@ -1,0 +1,21 @@
+name: Logint Test Cypress
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Up calculator
+        start: docker-compose up -d 
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm run cypress:runCalculatorTest
+          wait-on: 'http://localhost:3000'
+          browser: chrome
+          record: true
+          parallel: false 
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
