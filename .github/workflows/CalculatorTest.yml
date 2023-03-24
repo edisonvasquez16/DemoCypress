@@ -7,7 +7,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Up calculator
-        start: docker-compose up -d 
+        with: 
+          start: docker-compose up -d 
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
