@@ -4,9 +4,10 @@ module.exports = defineConfig({
   projectId: "7tauio",
   reporter: 'cypress-mochawesome-reporter',
   chromeWebSecurity : false,
+  video: false,
   e2e: {
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
+      require('cypress-mochawesome-reporter/plugin')(on)
     },
   },
 });
