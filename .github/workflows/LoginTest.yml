@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Reclaim cache directory
-        run: chown -R 1001:1001 /github/home/.cache && echo "pwn dat cache"
+        run: sudo chmod -R 777 /
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
