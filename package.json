@@ -4,10 +4,7 @@
     "@cypress/xpath": "^2.0.3",
     "cypress": "^12.8.1",
     "cypress-grep": "^2.5.3",
-    "cypress-mochawesome-reporter": "^2.4.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "mocha": "^10.2.0",
-    "mocha-junit-reporter": "^2.2.0"
+    "eslint-plugin-cypress": "^2.12.1"
   },
   "dependencies": {
     "cypress-xpath": "^2.0.1"
