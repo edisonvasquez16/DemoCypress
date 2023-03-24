@@ -1,4 +1,4 @@
-name: Logint Test Cypress
+name: Calculator Test Cypress
 on: [push]
 jobs:
   cypress-run:
