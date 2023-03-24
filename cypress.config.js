@@ -5,7 +5,7 @@ module.exports = defineConfig({
   reporter: 'mochawesome',
   reporterOptions: {
     reportFilename: 'AutomationCypressReport',
-    reportDir: 'cypress/results',
+    reportDir: 'cypress/reports',
     overwrite: false,
     html: true,
     json: true,    
@@ -14,7 +14,7 @@ module.exports = defineConfig({
   video: false,
   e2e: {
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on)
+      //require('cypress-mochawesome-reporter/plugin')(on)
     },
   },
 });
