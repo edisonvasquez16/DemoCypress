@@ -15,7 +15,7 @@ module.exports = defineConfig({
   video: true,
   e2e: {
     setupNodeEvents(on, config) {
-      //require('cypress-mochawesome-reporter/plugin')(on)
+      require('cypress-mochawesome-reporter/plugin')(on)
     },
   },
 });
