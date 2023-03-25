@@ -33,7 +33,7 @@ jobs:
         uses: PavanMudigonda/html-reporter-github-pages@v1.0
         id: test-report
         with:
-          test_results: cypress\reports\AutomationCypressReport.html
+          test_results: cypress/reports/
           gh_pages: gh-pages
           results_history: results-history
           keep_reports: 10
