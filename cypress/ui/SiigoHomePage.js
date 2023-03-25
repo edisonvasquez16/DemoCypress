@@ -7,7 +7,7 @@ class SeeThatUser {
     loged(username) {
         this.elements.companyName()
             .should('contain', username)
-            //.and('have.css', 'title', username)
+        //.and('have.css', 'title', username)
     }
 }
 

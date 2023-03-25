@@ -28,7 +28,7 @@ import SiigoLoginPage from "../ui/SiigoLoginPage"
 
 Cypress.Commands.add('loginSiigoPage', (username, password) => {
     SiigoLoginPage
-    .enterUserValue(username)
-    .enterPasswordValue(password)
-    .clickOnLoginButton()
+        .enterUserValue(username)
+        .enterPasswordValue(password)
+        .clickOnLoginButton()
 })

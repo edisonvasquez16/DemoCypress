@@ -4,8 +4,8 @@ class SeeThatValue {
 
     equals(value) {
         CalculatorPage.elements.result()
-         .invoke('val')
-         .should('contain', value)            
+            .invoke('val')
+            .should('contain', value)
     }
 }
 

@@ -3,7 +3,7 @@ import CalculatorPage from '../ui/CalculatorPage'
 
 describe('SIIGO CALCULATOR TEST', function () {
 
-    beforeEach('Calculator can be open', function () {
+    beforeEach('CALCULATOR CAN BE OPEN', function () {
         CalculatorPage
             .visit()
             .validatePage()
@@ -13,7 +13,7 @@ describe('SIIGO CALCULATOR TEST', function () {
             })
     })
 
-    describe('Test of calculator operations', function () {
+    describe('TEST OF CALCULATOR OPERATIONS', function () {
 
         it('User can execute add operation', function () {
             cy.intercept('POST', '/Calculator/Add', {
@@ -32,7 +32,7 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         it('User can execute substract operation', function () {
             CalculatorPage
-            .selectNumber(this.numbers.number1)
+                .selectNumber(this.numbers.number1)
                 .selectSubstractOption()
                 .selectNumber(this.numbers.number2)
                 .selectCalculateOption()
@@ -43,7 +43,7 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         it('User can execute multiply operation', function () {
             CalculatorPage
-            .selectNumber(this.numbers.number1)
+                .selectNumber(this.numbers.number1)
                 .selectMultiplyAddOption()
                 .selectNumber(this.numbers.number2)
                 .selectCalculateOption()
@@ -54,7 +54,7 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         it('User can execute division operation', function () {
             CalculatorPage
-            .selectNumber(this.numbers.number1)
+                .selectNumber(this.numbers.number1)
                 .selectDivOption()
                 .selectNumber(this.numbers.number2)
                 .selectCalculateOption()
@@ -84,7 +84,7 @@ describe('SIIGO CALCULATOR TEST', function () {
         })
     })
 
-    describe('Test of calculator operations array', function () {
+    describe('TEST OF CALCULATOR OPERATIONS ARRAY', function () {
 
         const values = ['150', '+', '260', '*', '2', '-', '420', '/', '4', '*', '2', '/', '4']
 
