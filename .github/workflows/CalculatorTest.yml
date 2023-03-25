@@ -17,6 +17,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           start: npm run cypress:runCalculatorTest
+          wait-on: 'http://localhost:3000'
           browser: chrome
           record: true
           parallel: false 
