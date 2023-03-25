@@ -38,8 +38,7 @@ jobs:
           results_history: results-history
           keep_reports: 10
 
-      - name: HTML Preview
-        id: html_preview
-        uses: pavi2410/html-preview-action@v2
+      - uses: actions/upload-artifact@v3
         with:
-          html_file: 'cypress/reports/AutomationCypressReport.html'
+          name: CypressReport
+          path: cypress/reports/
