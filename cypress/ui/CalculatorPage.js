@@ -74,6 +74,7 @@ class CalculatorPage {
         return this.elements.result()
             .invoke('val')
     }
+
 }
 
 module.exports = new CalculatorPage();
