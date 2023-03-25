@@ -6,7 +6,7 @@ module.exports = defineConfig({
   reporterOptions: {
     reportFilename: 'AutomationCypressReport',
     reportDir: 'cypress/reports',
-    overwrite: false,
+    overwrite: true,
     html: true,
     json: true,
   },
