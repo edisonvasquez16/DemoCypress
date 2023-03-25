@@ -29,6 +29,7 @@ class CalculatorPage {
         for (var i = 0; i < value.length; i++)
             cy.xpath("//button[contains(text(),'" + value.charAt(i) + "')]")
                 .click()
+        cy.wait(400)
         return this
     }
 
@@ -73,7 +74,6 @@ class CalculatorPage {
         return this.elements.result()
             .invoke('val')
     }
-
 }
 
 module.exports = new CalculatorPage();

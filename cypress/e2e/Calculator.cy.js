@@ -63,18 +63,21 @@ describe('SIIGO CALCULATOR TEST', function () {
                 .equals(2.5)
         })
 
-        it.skip('User can execute multiples operations', function () {
+        it('User can execute multiples operations', function () {
             CalculatorPage
                 .selectNumber('150')
                 .selectAddOption()
                 .selectNumber('260')
                 .selectCalculateOption()
+
                 .selectMultiplyAddOption()
                 .selectNumber('2')
                 .selectCalculateOption()
+
                 .selectSubstractOption()
                 .selectNumber('420')
                 .selectCalculateOption()
+
                 .selectDivOption()
                 .selectNumber('4')
                 .selectCalculateOption()
@@ -88,7 +91,7 @@ describe('SIIGO CALCULATOR TEST', function () {
 
         const values = ['150', '+', '260', '*', '2', '-', '420', '/', '4', '*', '2', '/', '4']
 
-        it('User can execute multiples operations with array', function () {
+        it.only('User can execute multiples operations with array', function () {
             values.forEach(function callback(value, index) {
                 CalculatorPage
                     .selectNumber(value)
