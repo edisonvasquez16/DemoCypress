@@ -21,8 +21,8 @@
   "scripts": {
     "test": "test",
     "cypress:open": "cypress open",
-    "cypress:runCalculatorTest": "cypress run --spec cypress/e2e/Calculator*.cy.js --record --key 2212b33c-7e37-4280-9026-45a088734829",
-    "cypress:runLoginTest": "cypress run --spec cypress/e2e/Login.cy.js --record --key 2212b33c-7e37-4280-9026-45a088734829",
-    "cypress:runAllTest": "cypress run --spec cypress/e2e/*.cy.js --record --key 2212b33c-7e37-4280-9026-45a088734829"
+    "cypress:runCalculatorTest": "cypress run --spec cypress/e2e/Calculator*.cy.js",
+    "cypress:runLoginTest": "cypress run --spec cypress/e2e/Login.cy.js",
+    "cypress:runAllTest": "cypress run --spec cypress/e2e/*.cy.js"
   }
 }
