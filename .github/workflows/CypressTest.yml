@@ -18,9 +18,9 @@ jobs:
       - name: Cypress Tests
         uses: cypress-io/github-action@v4
         with:
-          start: npm run cypress:runAllTest
+          start: npm run cypress:runLoginTest
           browser: chrome
-          continue-on-error: true
+          if: always()
           record: true
           parallel: true
         env:
@@ -46,9 +46,8 @@ jobs:
           path: cypress/reports/
 
       - name: Get Allure history
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         if: always()
-        continue-on-error: true
         with:
           ref: gh-pages
           path: gh-pages
