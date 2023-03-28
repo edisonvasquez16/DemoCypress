@@ -1,6 +1,0 @@
-<testsuite name="Mocha Tests" tests="4" failures="0" errors="0" skipped="0" timestamp="Tue, 28 Mar 2023 22:40:34 GMT" time="37.915">
-<testcase classname="LOGIN IN SIIGO CLOUD PAGE" name="USER CAN BE LOGIN" time="12.146"/>
-<testcase classname="LOGIN IN SIIGO CLOUD PAGE" name="USER CAN BE LOGIN WITH COMMAND" time="8.863"/>
-<testcase classname="LOGIN WITH INTERCEPTED 1" name="USER CAN BE LOGIN WITH COMMAND" time="8.274"/>
-<testcase classname="LOGIN WITH INTERCEPTED 2" name="USER CAN BE LOGIN WITH COMMAND" time="6.079"/>
-</testsuite>
