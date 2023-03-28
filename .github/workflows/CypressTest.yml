@@ -36,7 +36,7 @@ jobs:
         id: test-report
         with:
           test_results: cypress/reports/
-          gh_pages: gh-pages
+          gh_pages: https://edisonvasquez16.github.io/DemoCypress/
           results_history: results-history
           keep_reports: 10
 
@@ -44,10 +44,3 @@ jobs:
         with:
           name: CypressReport
           path: cypress/reports/
-
-      - name: Get Allure history
-        uses: actions/checkout@v3
-        if: always()
-        with:
-          ref: gh-pages
-          path: gh-pages
