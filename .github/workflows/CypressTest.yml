@@ -19,7 +19,7 @@ jobs:
       - name: Cypress Tests
         uses: cypress-io/github-action@v4
         with:
-          start: npm run cypress:runLoginTest
+          start: npm run cypress:runAllTest
           browser: chrome
           record: true
           parallel: true
