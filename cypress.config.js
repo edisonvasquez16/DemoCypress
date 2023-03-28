@@ -3,9 +3,10 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   projectId: "7tauio",
   reporter: 'mochawesome',
+  //reporter: "cypress-multi-reporters",
   reporterOptions: {
       reportFilename: 'index',
-      reportDir: 'cypress/results',
+      reportDir: 'cypress/reports',
       overwrite: true,
       html: true,
       json: true,
