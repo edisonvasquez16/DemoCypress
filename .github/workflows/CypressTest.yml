@@ -18,9 +18,8 @@ jobs:
       - name: Cypress Tests
         uses: cypress-io/github-action@v4
         with:
-          start: npm run cypress:runLoginTest
+          start: npm run cypress:runAllTest
           browser: chrome
-          if: always()
           record: true
           parallel: true
         env:
@@ -35,7 +34,7 @@ jobs:
         id: test-report
         with:
           test_results: cypress/reports/
-          gh_pages: https://edisonvasquez16.github.io/DemoCypress/
+          gh_pages: gh-pages
           results_history: results-history
           keep_reports: 10
 
@@ -43,3 +42,22 @@ jobs:
         with:
           name: CypressReport
           path: cypress/reports/
+
+      - name: Copy test execution videos
+        run: |
+          mkdir public
+          cp -r cypress/videos public/videos*/
+          
+      - name: Merge test results into one
+        run: npm run report:merge
+      
+      - name: Generate HTML report
+        run: npm run report:generate
+      
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
