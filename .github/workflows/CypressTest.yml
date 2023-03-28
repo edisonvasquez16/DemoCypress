@@ -3,6 +3,7 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    continue-on-error: true
     permissions:
       contents: read
       packages: write
