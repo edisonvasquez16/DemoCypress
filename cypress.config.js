@@ -6,7 +6,7 @@ module.exports = defineConfig({
   //reporter: "cypress-multi-reporters",
   reporterOptions: {
       reportFilename: 'index',
-      reportDir: 'cypress/reports',
+      reportDir: 'cypress/results',
       overwrite: true,
       html: true,
       json: true,

@@ -34,7 +34,7 @@ jobs:
         uses: PavanMudigonda/html-reporter-github-pages@v1.0
         id: test-report
         with:
-          test_results: cypress/reports/
+          test_results: cypress/results/
           gh_pages: gh-pages
           results_history: results-history
           keep_reports: 10
@@ -42,7 +42,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: CypressReport
-          path: cypress/reports/
+          path: cypress/results/
 
       - name: Copy test execution videos
         run: |
