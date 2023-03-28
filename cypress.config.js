@@ -2,15 +2,13 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   projectId: "7tauio",
-  //reporter: 'mochawesome',
-  reporter: "cypress-multi-reporters",
+  reporter: 'mochawesome',
   reporterOptions: {
-    configFile: "reporter-config.json"
-    //  reportFilename: 'AutomationCypressReport',
-    //  reportDir: 'cypress/reports',
-    //  overwrite: true,
-    //  html: true,
-    //  json: true,
+      reportFilename: 'index',
+      reportDir: 'cypress/reports',
+      overwrite: true,
+      html: true,
+      json: true,
   },
   chromeWebSecurity: false,
   video: true,
