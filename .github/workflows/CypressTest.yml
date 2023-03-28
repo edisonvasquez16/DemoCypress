@@ -47,7 +47,7 @@ jobs:
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: cypress/results
           user_name: 'edisonvasquez16'
           user_email: 'evasquez16.ev@gmail.com'
