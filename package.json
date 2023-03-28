@@ -28,6 +28,6 @@
     "cypress:runLoginTest": "cypress run --spec cypress/e2e/Login.cy.js --record false",
     "cypress:runAllTest": "cypress run --spec cypress/e2e/*.cy.js",
     "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
-    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"
+    "report:generate": "marge index.json --reportDir results --assetsDir results/assets --reportPageTitle index.html"
   }
 }
