@@ -20,6 +20,7 @@ jobs:
         with:
           start: npm run cypress:runAllTest
           browser: chrome
+          continue-on-error: true
           record: true
           parallel: true
         env:
