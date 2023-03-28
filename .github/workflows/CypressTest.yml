@@ -29,7 +29,6 @@ jobs:
 
       - name: Shutdown calculator application
         run: docker stop front back
-        if: always()
 
       - name: Publish reports
         uses: PavanMudigonda/html-reporter-github-pages@v1.0
