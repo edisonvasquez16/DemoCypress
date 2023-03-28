@@ -44,21 +44,10 @@ jobs:
           name: CypressReport
           path: cypress/reports/
 
-      - name: Copy test execution videos
-        run: |
-          mkdir public
-          cp -r cypress/videos public/videos*/
-          
-      - name: Merge test results into one
-        run: npm run report:merge
-      
-      - name: Generate HTML report
-        run: npm run report:generate
-      
-      - name: Deploy report page
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          ref: https://edisonvasquez16.github.io/DemoCypress/
+          path: https://edisonvasquez16.github.io/DemoCypress/
