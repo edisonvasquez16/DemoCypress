@@ -10,7 +10,8 @@
     "eslint-plugin-cypress": "^2.12.1",
     "mocha": "^10.2.0",
     "mocha-junit-reporter": "^2.2.0",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "mochawesome-report-generator": "^6.2.0"
   },
   "eslintConfig": {
     "env": {
