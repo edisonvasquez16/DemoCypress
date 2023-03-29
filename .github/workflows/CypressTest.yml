@@ -11,11 +11,12 @@ jobs:
         run: | 
           docker run --name front -p 80:80 -d mvelasquez10/calculator:latest
           docker run --name back -p 5000:80 -d mvelasquez10/calculator-api:latest
-          rm -rf ./public ./results ./videos index.html
+      
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - uses: actions/checkout@v3
-
-      - run: |
+      - name: Cache verify
+        run: |
           npm ci
           $(npm bin)/cypress cache path
           $(npm bin)/cypress cache list
@@ -61,7 +62,8 @@ jobs:
           npm run report:merge
           npm run report:generate
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Push report page
+        uses: peaceiris/actions-gh-pages@v3
         if: always()
         with:
           github_token: ${{ secrets.GH_TOKEN }}
