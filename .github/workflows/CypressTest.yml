@@ -35,6 +35,7 @@ jobs:
         run: |
           mkdir public
           cp -r cypress/videos public/videos
+        if: always()
       
       - name: Merge test results into one
         run: npm run report:merge
