@@ -30,6 +30,12 @@ jobs:
         run: docker stop front back
         if: always()
 
+      - name: Create artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: CypressReport
+          path: cypress/reports/
+
       - name: Generate report
         run: |
           mkdir public
