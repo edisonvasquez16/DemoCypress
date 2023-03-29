@@ -11,6 +11,10 @@ jobs:
         run: | 
           docker run --name front -p 80:80 -d mvelasquez10/calculator:latest
           docker run --name back -p 5000:80 -d mvelasquez10/calculator-api:latest
+          rm -rf ./public ./videos ./results index.html
+          mkdir public
+          mkdir videos
+          mkdir results
       
       - name: Checkout
         uses: actions/checkout@v3
