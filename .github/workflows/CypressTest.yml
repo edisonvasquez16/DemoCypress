@@ -31,6 +31,15 @@ jobs:
         run: docker stop front back
         if: always()
 
+      - name: Publish single report
+        uses: PavanMudigonda/html-reporter-github-pages@v1.0
+        id: CypressReport
+        with:
+          test_results: cypress/results/
+          gh_pages: gh-pages
+          results_history: results-history
+          keep_reports: 10
+
       - name: Create artifact
         if: always()
         uses: actions/upload-artifact@v3
