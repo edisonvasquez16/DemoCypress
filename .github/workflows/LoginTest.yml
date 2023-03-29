@@ -1,0 +1,48 @@
+name: Tests Cypress
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress Tests
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm run cypress:runLoginTest
+          browser: chrome
+          record: true
+          parallel: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Shutdown calculator application
+        run: docker stop front back
+
+      - name: Publish reports
+        uses: PavanMudigonda/html-reporter-github-pages@v1.0
+        id: test-report
+        with:
+          test_results: cypress/results/
+          gh_pages: gh-pages
+          results_history: results-history
+          keep_reports: 10
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: CypressReport
+          path: cypress/results/
+
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: cypress/results
+          user_name: 'edisonvasquez16'
+          user_email: 'evasquez16.ev@gmail.com'
