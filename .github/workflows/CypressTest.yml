@@ -7,11 +7,10 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: Up calculator front
-        run: docker run --name front -p 80:80 -d mvelasquez10/calculator:latest
-      
-      - name: Up calculator back
-        run: docker run --name back -p 5000:80 -d mvelasquez10/calculator-api:latest
+      - name: Up calculator app
+        run: | 
+          docker run --name front -p 80:80 -d mvelasquez10/calculator:latest
+          docker run --name back -p 5000:80 -d mvelasquez10/calculator-api:latest
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,18 +30,12 @@ jobs:
         run: docker stop front back
         if: always()
 
-      - name: Copy test execution videos
+      - name: Generate report
         run: |
           mkdir public
           cp -r cypress/videos public/videos
-        if: always()
-      
-      - name: Merge test results into one
-        run: npm run report:merge
-        if: always()
-
-      - name: Generate HTML report
-        run: npm run report:generate
+          npm run report:merge
+          npm run report:generate
         if: always()
 
       - name: Deploy report page
