@@ -6,12 +6,12 @@ module.exports = defineConfig({
   reporterOptions: {
       reportFilename: 'index',
       reportDir: 'cypress/results',
-      overwrite: true,
+      overwrite: false,
       html: true,
       json: true,
   },
   chromeWebSecurity: false,
-  video: false,
+  video: true,
   e2e: {
     setupNodeEvents(on, config) {
     

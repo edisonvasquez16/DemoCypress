@@ -27,6 +27,8 @@
     "cypress:runCalculatorBackTest": "cypress run --spec cypress/e2e/CalculatorRest.cy.js",
     "cypress:runCalculatorFrontTest": "cypress run --spec cypress/e2e/Calculator.cy.js",
     "cypress:runLoginTest": "cypress run --spec cypress/e2e/Login.cy.js",
-    "cypress:runAllTest": "cypress run --spec cypress/e2e/*.cy.js"
+    "cypress:runAllTest": "cypress run --spec cypress/e2e/*.cy.js",
+    "report:merge": "mochawesome-merge cypress/results/*.json > index.json",
+    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"
   }
 }
