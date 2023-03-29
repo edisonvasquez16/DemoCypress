@@ -1,0 +1,278 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-03-29T01:31:46.002Z",
+    "end": "2023-03-29T01:31:47.088Z",
+    "duration": 1086,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ce6803fb-97f1-40fa-bbf9-baec31d2756e",
+      "title": "",
+      "fullFile": "cypress/e2e/CalculatorRest.cy.js",
+      "file": "cypress/e2e/CalculatorRest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "efd3ade1-cf04-4100-a2c9-00703deece51",
+          "title": "SIIGO CALCULATOR REST",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "52b7afdd-84e0-4113-b4d7-748c4b8079ee",
+              "title": "TEST CALCULATE OPERATIONS",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Add with RestCalculator ",
+                  "fullTitle": "SIIGO CALCULATOR REST TEST CALCULATE OPERATIONS Add with RestCalculator ",
+                  "timedOut": null,
+                  "duration": 237,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/CalculatorRest.cy.js.mp4\"",
+                  "code": "cy.request({\n  method: 'POST',\n  url: api.concat(_EndPoints.default.paths.opetarionAdd),\n  headers: {\n    'Content-Type': format\n  },\n  body: this.jsonBody\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.value).to.equal(70);\n  expect(response.body.error).to.equal(null);\n});",
+                  "err": {},
+                  "uuid": "38fb0165-d57f-486c-a20d-e41eb81ef161",
+                  "parentUUID": "52b7afdd-84e0-4113-b4d7-748c4b8079ee",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Substract with RestCalculator ",
+                  "fullTitle": "SIIGO CALCULATOR REST TEST CALCULATE OPERATIONS Substract with RestCalculator ",
+                  "timedOut": null,
+                  "duration": 113,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/CalculatorRest.cy.js.mp4\"",
+                  "code": "cy.request({\n  method: 'POST',\n  url: api.concat(_EndPoints.default.paths.opetarionSubstract),\n  headers: {\n    'Content-Type': format\n  },\n  body: this.jsonBody\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.value).to.equal(30);\n  expect(response.body.error).to.equal(null);\n});",
+                  "err": {},
+                  "uuid": "1f2f93de-e020-40ad-923f-1db4da7cc5b3",
+                  "parentUUID": "52b7afdd-84e0-4113-b4d7-748c4b8079ee",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Multiply with RestCalculator ",
+                  "fullTitle": "SIIGO CALCULATOR REST TEST CALCULATE OPERATIONS Multiply with RestCalculator ",
+                  "timedOut": null,
+                  "duration": 115,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/CalculatorRest.cy.js.mp4\"",
+                  "code": "cy.request({\n  method: 'POST',\n  url: api.concat(_EndPoints.default.paths.opetarionMultiply),\n  headers: {\n    'Content-Type': format\n  },\n  body: this.jsonBody\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.value).to.equal(1000);\n  expect(response.body.error).to.equal(null);\n});",
+                  "err": {},
+                  "uuid": "58f0ac9a-2be1-4d44-8360-b62f7af5602c",
+                  "parentUUID": "52b7afdd-84e0-4113-b4d7-748c4b8079ee",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Divide with RestCalculator ",
+                  "fullTitle": "SIIGO CALCULATOR REST TEST CALCULATE OPERATIONS Divide with RestCalculator ",
+                  "timedOut": null,
+                  "duration": 85,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/CalculatorRest.cy.js.mp4\"",
+                  "code": "cy.request({\n  method: 'POST',\n  url: api.concat(_EndPoints.default.paths.opetarionDivide),\n  headers: {\n    'Content-Type': format\n  },\n  body: this.jsonBody\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.value).to.equal(2.5);\n  expect(response.body.error).to.equal(null);\n});",
+                  "err": {},
+                  "uuid": "6818b305-8650-4d34-94ab-1ef8c944758e",
+                  "parentUUID": "52b7afdd-84e0-4113-b4d7-748c4b8079ee",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "38fb0165-d57f-486c-a20d-e41eb81ef161",
+                "1f2f93de-e020-40ad-923f-1db4da7cc5b3",
+                "58f0ac9a-2be1-4d44-8360-b62f7af5602c",
+                "6818b305-8650-4d34-94ab-1ef8c944758e"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 550,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "32a6f692-c265-487b-b647-584cfca8257d",
+              "title": "OTHER OPERATIONS",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Delete history RestCalculator ",
+                  "fullTitle": "SIIGO CALCULATOR REST OTHER OPERATIONS Delete history RestCalculator ",
+                  "timedOut": null,
+                  "duration": 129,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/CalculatorRest.cy.js.mp4\"",
+                  "code": "cy.request({\n  method: 'DELETE',\n  url: api.concat(_EndPoints.default.paths.deleteHistory)\n}).then(response => {\n  expect(response.status).to.equal(200);\n});",
+                  "err": {},
+                  "uuid": "dc80c1e1-f6bb-42dd-b287-93607fd4c02e",
+                  "parentUUID": "32a6f692-c265-487b-b647-584cfca8257d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Get history RestCalculator ",
+                  "fullTitle": "SIIGO CALCULATOR REST OTHER OPERATIONS Get history RestCalculator ",
+                  "timedOut": null,
+                  "duration": 86,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/CalculatorRest.cy.js.mp4\"",
+                  "code": "cy.request({\n  method: 'GET',\n  url: api.concat(_EndPoints.default.paths.getHistory)\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.history).to.contain(1000);\n});",
+                  "err": {},
+                  "uuid": "bd8896d2-cf3e-43ad-9ef1-da7a6987cdb2",
+                  "parentUUID": "32a6f692-c265-487b-b647-584cfca8257d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Get history RestCalculator ",
+                  "fullTitle": "SIIGO CALCULATOR REST OTHER OPERATIONS Get history RestCalculator ",
+                  "timedOut": null,
+                  "duration": 82,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/CalculatorRest.cy.js.mp4\"",
+                  "code": "cy.request('GET', api.concat(_EndPoints.default.paths.getHistory)).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.history).to.contain(1000);\n});",
+                  "err": {},
+                  "uuid": "917313ff-a63f-49f7-bb53-0ca30b32a489",
+                  "parentUUID": "32a6f692-c265-487b-b647-584cfca8257d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Put max history RestCalculator ",
+                  "fullTitle": "SIIGO CALCULATOR REST OTHER OPERATIONS Put max history RestCalculator ",
+                  "timedOut": null,
+                  "duration": 89,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"videos/CalculatorRest.cy.js.mp4\"",
+                  "code": "cy.request({\n  method: 'PUT',\n  url: api.concat(_EndPoints.default.paths.setMaxHistory),\n  headers: {\n    'Content-Type': format\n  },\n  body: {\n    \"value\": 10\n  }\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.value).to.equal(10);\n  expect(response.body.error).to.equal(null);\n});",
+                  "err": {},
+                  "uuid": "eb075d5b-c9e8-4565-9629-64a692a9cf74",
+                  "parentUUID": "32a6f692-c265-487b-b647-584cfca8257d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "dc80c1e1-f6bb-42dd-b287-93607fd4c02e",
+                "bd8896d2-cf3e-43ad-9ef1-da7a6987cdb2",
+                "917313ff-a63f-49f7-bb53-0ca30b32a489",
+                "eb075d5b-c9e8-4565-9629-64a692a9cf74"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 386,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "index",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "index",
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
