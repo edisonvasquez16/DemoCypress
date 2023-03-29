@@ -11,7 +11,7 @@ jobs:
         run: | 
           docker run --name front -p 80:80 -d mvelasquez10/calculator:latest
           docker run --name back -p 5000:80 -d mvelasquez10/calculator-api:latest
-          rm -rf ./public
+          rm -rf /public /results /videos index.html
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -32,6 +32,7 @@ jobs:
         if: always()
 
       - name: Create artifact
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: CypressReport
