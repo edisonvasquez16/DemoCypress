@@ -23,7 +23,7 @@ jobs:
           start: npm run cypress:runAllTest
           browser: chrome
           record: true
-          parallel: true
+          parallel: false
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
