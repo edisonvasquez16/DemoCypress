@@ -1,4 +1,4 @@
-name: Tests Cypress
+name: Calculator front Tests
 on: [push]
 jobs:
   cypress-run:
