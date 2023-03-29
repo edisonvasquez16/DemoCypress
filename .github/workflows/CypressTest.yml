@@ -3,7 +3,6 @@ on: [push]
 jobs:
   RunWorkflow:
     runs-on: ubuntu-latest
-    continue-on-error: true
     permissions:
       contents: read
       packages: write
@@ -30,8 +29,10 @@ jobs:
 
       - name: Shutdown calculator application
         run: docker stop front back
+        if: always()
 
       - name: Deploy report page
+        if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }}
